@@ -169,5 +169,6 @@ object Modules {
     const val domain = ":domain"
     const val model = ":model"
     const val data = ":data"
+    const val common_ui = ":common-ui"
 }
 

@@ -1,42 +1,26 @@
 plugins {
-    id(BuildPlugins.Apply.androidApplication)
+    id(BuildPlugins.Apply.androidLibrary)
     id(BuildPlugins.Apply.kotlinAndroid)
     id(BuildPlugins.Apply.kotlinKapt)
     id(BuildPlugins.Apply.daggerHiltPlugin)
-}
-kapt {
-    correctErrorTypes = true
-    useBuildCache = true
-
-    javacOptions {
-        option("-Xmaxerrs", 2000)
-    }
 }
 
 android {
     compileSdk = AndroidSdk.compile
     buildToolsVersion = AndroidSdk.buildToolsVersion
     defaultConfig {
-        applicationId = Config.applicationId
         minSdk = AndroidSdk.min
         targetSdk = AndroidSdk.target
-        versionCode = Config.versionCode
-        versionName = Config.versionName
-        vectorDrawables {
-            useSupportLibrary = true
-        }
     }
     buildTypes {
         getByName("release") {
             isMinifyEnabled = true
-            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
     }
-    testOptions.unitTests.isIncludeAndroidResources = true
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -49,6 +33,7 @@ android {
         freeCompilerArgs += "-Xopt-in=androidx.compose.foundation.ExperimentalFoundationApi"
         freeCompilerArgs += "-Xopt-in=com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi"
     }
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
 
     buildFeatures {
         compose = true
@@ -63,12 +48,31 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.domain))
-    implementation(project(Modules.data))
-    implementation(project(Modules.common_ui))
+    api(project(Modules.domain))
 
+    implementation(Libraries.Kotlin.jdk)
+
+    api(Libraries.AndroidX.Navigation.runTime)
+    api(Libraries.AndroidX.Navigation.core)
+
+    /* Hilt */
     implementation(Libraries.Hilt.core)
     kapt(Libraries.Hilt.compiler)
-    implementation(Libraries.AndroidX.Hilt.work)
-    kapt(Libraries.AndroidX.Hilt.compiler)
+
+    api(Libraries.AndroidX.Compose.compiler)
+    api(Libraries.AndroidX.Compose.foundation)
+    api(Libraries.AndroidX.Compose.material)
+    api(Libraries.AndroidX.Compose.runtime)
+    api(Libraries.AndroidX.Compose.runtimeLivedata)
+    debugApi(Libraries.AndroidX.Compose.tooling)
+    api(Libraries.AndroidX.Compose.ui)
+    api(Libraries.AndroidX.Compose.uiUtil)
+    api(Libraries.AndroidX.Compose.preview)
+    api(Libraries.AndroidX.Compose.animations)
+    api(Libraries.AndroidX.Compose.activity)
+    api(Libraries.Accompanist.insets)
+    api(Libraries.Accompanist.system)
+    api(Libraries.AndroidX.Hilt.navigationCompose)
+
+    api(Libraries.ImageUtils.coil)
 }
