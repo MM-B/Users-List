@@ -17,3 +17,4 @@ rootProject.name = "Users List"
 include(":app")
 include(":domain")
 include(":model")
+include(":data")

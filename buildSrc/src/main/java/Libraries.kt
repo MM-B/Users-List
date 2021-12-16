@@ -168,5 +168,6 @@ object Modules {
     const val app = ":app"
     const val domain = ":domain"
     const val model = ":model"
+    const val data = ":data"
 }
 

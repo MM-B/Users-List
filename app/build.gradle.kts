@@ -64,6 +64,7 @@ android {
 
 dependencies {
     implementation(project(Modules.domain))
+    implementation(project(Modules.data))
 
     implementation(Libraries.Hilt.core)
     kapt(Libraries.Hilt.compiler)
