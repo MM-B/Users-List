@@ -170,5 +170,6 @@ object Modules {
     const val model = ":model"
     const val data = ":data"
     const val common_ui = ":common-ui"
+    const val ui_users = ":ui-users"
 }
 

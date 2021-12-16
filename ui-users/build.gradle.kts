@@ -1,42 +1,30 @@
 plugins {
-    id(BuildPlugins.Apply.androidApplication)
+    id(BuildPlugins.Apply.androidLibrary)
     id(BuildPlugins.Apply.kotlinAndroid)
-    id(BuildPlugins.Apply.kotlinKapt)
     id(BuildPlugins.Apply.daggerHiltPlugin)
+    id(BuildPlugins.Apply.kotlinKapt)
 }
+
 kapt {
     correctErrorTypes = true
-    useBuildCache = true
-
-    javacOptions {
-        option("-Xmaxerrs", 2000)
-    }
 }
 
 android {
     compileSdk = AndroidSdk.compile
     buildToolsVersion = AndroidSdk.buildToolsVersion
     defaultConfig {
-        applicationId = Config.applicationId
         minSdk = AndroidSdk.min
         targetSdk = AndroidSdk.target
-        versionCode = Config.versionCode
-        versionName = Config.versionName
-        vectorDrawables {
-            useSupportLibrary = true
-        }
     }
     buildTypes {
         getByName("release") {
             isMinifyEnabled = true
-            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
     }
-    testOptions.unitTests.isIncludeAndroidResources = true
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -44,11 +32,8 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
-        freeCompilerArgs += "-Xopt-in=kotlinx.serialization.ExperimentalSerializationApi"
-        freeCompilerArgs += "-Xopt-in=androidx.compose.material.ExperimentalMaterialApi"
-        freeCompilerArgs += "-Xopt-in=androidx.compose.foundation.ExperimentalFoundationApi"
-        freeCompilerArgs += "-Xopt-in=com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi"
     }
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
 
     buildFeatures {
         compose = true
@@ -63,13 +48,8 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.domain))
-    implementation(project(Modules.data))
     implementation(project(Modules.common_ui))
-    implementation(project(Modules.ui_users))
 
     implementation(Libraries.Hilt.core)
     kapt(Libraries.Hilt.compiler)
-    implementation(Libraries.AndroidX.Hilt.work)
-    kapt(Libraries.AndroidX.Hilt.compiler)
 }
