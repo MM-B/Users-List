@@ -2,8 +2,8 @@ plugins {
     id(BuildPlugins.Apply.androidLibrary)
     id(BuildPlugins.Apply.kotlinAndroid)
     id(BuildPlugins.Apply.kotlinKapt)
-    id(BuildPlugins.Apply.daggerHiltPlugin)
     id(BuildPlugins.Apply.kotlinParcelize)
+    id(BuildPlugins.Apply.kotlinxSerialization)
 }
 
 android {
@@ -15,7 +15,7 @@ android {
     }
     buildTypes {
         getByName("release") {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -31,14 +31,13 @@ android {
         jvmTarget = "1.8"
     }
     kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
+
 }
 
 dependencies {
-    api(project(Modules.model))
+    implementation(Libraries.Serializable.kotlinxSerialization)
 
-    implementation(Libraries.Hilt.core)
-    kapt(Libraries.Hilt.compiler)
-
-    api(Libraries.Kotlin.Coroutine.core)
-    api(Libraries.Kotlin.Coroutine.android)
+    api(Libraries.AndroidX.Room.roomCommon)
+    api(Libraries.AndroidX.Room.core)
+    kapt(Libraries.AndroidX.Room.compiler)
 }
