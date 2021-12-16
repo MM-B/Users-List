@@ -1,6 +1,6 @@
-package com.example.userlist.domain.baseusecases
+package com.example.userslist.domain.baseusecases
 
-import com.example.userlist.shared.resource.Resource
+import com.example.userslist.domain.utils.Resource
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 

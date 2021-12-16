@@ -1,4 +1,4 @@
-package com.example.userlist.domain.coroutineUtils
+package com.example.userslist.domain.coroutineUtils
 
 import javax.inject.Qualifier
 

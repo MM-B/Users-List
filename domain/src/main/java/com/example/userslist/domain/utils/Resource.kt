@@ -1,4 +1,4 @@
-package com.example.userlist.domain.utils
+package com.example.userslist.domain.utils
 
 /**
  * A generic class that holds a value with its loading status.
