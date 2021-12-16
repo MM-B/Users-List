@@ -72,4 +72,6 @@ dependencies {
     kapt(Libraries.Hilt.compiler)
     implementation(Libraries.AndroidX.Hilt.work)
     kapt(Libraries.AndroidX.Hilt.compiler)
+
+    implementation(Libraries.material)
 }
