@@ -63,6 +63,8 @@ android {
 }
 
 dependencies {
+    implementation(project(Modules.domain))
+
     implementation(Libraries.Hilt.core)
     kapt(Libraries.Hilt.compiler)
     implementation(Libraries.AndroidX.Hilt.work)
