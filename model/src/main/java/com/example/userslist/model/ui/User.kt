@@ -6,7 +6,6 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class User(
-    val id: String = "1",
     val gender: Gender = Gender.Male,
     val firstName: String = "Ali",
     val lastName: String = "Alizadeh",

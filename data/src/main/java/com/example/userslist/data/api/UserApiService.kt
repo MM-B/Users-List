@@ -7,7 +7,7 @@ import retrofit2.http.GET
 
 interface UserApiService {
 
-    @GET("api/?results=2")
+    @GET("api/?results=10")
     suspend fun getUsers(): Response<BaseResponse<UserNetwork>>
 
 }

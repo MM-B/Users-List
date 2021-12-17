@@ -35,7 +35,7 @@ android {
 dependencies {
     implementation(project(Modules.domain))
 
-    implementation(Libraries.Network.Retrofit.core)
+    api(Libraries.Network.Retrofit.core)
     implementation(Libraries.Network.OkHttp.core)
     implementation(Libraries.Network.OkHttp.logger)
     implementation(Libraries.Network.Retrofit.retrofitKotlinXSerializationConvertor)

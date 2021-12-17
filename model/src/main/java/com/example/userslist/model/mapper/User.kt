@@ -5,7 +5,6 @@ import com.example.userslist.model.network.UserNetwork
 import com.example.userslist.model.ui.User
 
 fun UserNetwork.toUser() = User(
-    id = id.value,
     gender = if (gender == "female") Gender.Female else Gender.Male,
     firstName = name.first,
     lastName = name.last,
