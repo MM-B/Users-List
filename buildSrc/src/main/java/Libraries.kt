@@ -95,7 +95,7 @@ object Libraries {
             const val preview = "androidx.compose.ui:ui-tooling-preview:$version"
             const val animations = "androidx.compose.animation:animation:$version"
             const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:$version"
-            const val activity = "androidx.activity:activity-compose:1.3.1"
+            const val activity = "androidx.activity:activity-compose:1.4.0"
             const val layout = "androidx.compose.foundation:foundation-layout:$version"
             const val materialIconsExtended =
                 "androidx.compose.material:material-icons-extended:$version"

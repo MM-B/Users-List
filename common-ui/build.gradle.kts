@@ -75,4 +75,8 @@ dependencies {
     api(Libraries.AndroidX.Hilt.navigationCompose)
 
     api(Libraries.ImageUtils.coil)
+    api(Libraries.AndroidX.ktxCore)
+
+    api(Libraries.material)
+    api(Libraries.AndroidX.appCompat)
 }
