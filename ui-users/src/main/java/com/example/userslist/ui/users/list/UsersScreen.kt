@@ -78,7 +78,7 @@ private fun UsersScreen(
                         modifier = Modifier
                             .size(64.dp)
                             .clip(CircleShape)
-                            .border(2.dp, Color.Gray, CircleShape)
+                            .border(2.dp, Color(0xAAe91d77), CircleShape)
                     )
 
                     Spacer(modifier = Modifier.width(20.dp))

@@ -9,6 +9,7 @@ data class User(
     val gender: Gender = Gender.Male,
     val firstName: String = "Ali",
     val lastName: String = "Alizadeh",
+    val country: String = "Iran",
     val city: String = "Tehran",
     val street: String = "Saadat Abbad",
     val email: String = "alialix@gmail.com",

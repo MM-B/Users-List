@@ -8,6 +8,7 @@ fun UserNetwork.toUser() = User(
     gender = if (gender == "female") Gender.Female else Gender.Male,
     firstName = name.first,
     lastName = name.last,
+    country = location.country,
     city = location.city,
     street = location.street.name,
     email = email,
