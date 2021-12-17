@@ -44,7 +44,7 @@ private fun ProfileScreen(user: User) {
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .fillMaxHeight(0.4f),
+                .fillMaxHeight(0.33f),
             shape = RoundedCornerShape(bottomStart = 26.dp, bottomEnd = 26.dp),
             elevation = 6.dp,
         ) {
