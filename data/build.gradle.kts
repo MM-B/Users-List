@@ -38,6 +38,7 @@ dependencies {
     implementation(Libraries.Network.Retrofit.core)
     implementation(Libraries.Network.OkHttp.core)
     implementation(Libraries.Network.OkHttp.logger)
+    implementation(Libraries.Network.Retrofit.retrofitKotlinXSerializationConvertor)
 
     implementation(Libraries.Hilt.core)
     kapt(Libraries.Hilt.compiler)
