@@ -1,12 +1,14 @@
 package com.example.userslist.ui.users.list
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import com.example.userslist.domain.usecases.GetUsersUesCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class UsersViewModel @Inject constructor(
-    val savedStateHandle: SavedStateHandle,
+    private val getUsersUesCase: GetUsersUesCase,
 ) : ViewModel() {
+
+
 }

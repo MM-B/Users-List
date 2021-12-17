@@ -48,6 +48,7 @@ android {
         freeCompilerArgs += "-Xopt-in=androidx.compose.material.ExperimentalMaterialApi"
         freeCompilerArgs += "-Xopt-in=androidx.compose.foundation.ExperimentalFoundationApi"
         freeCompilerArgs += "-Xopt-in=com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi"
+        freeCompilerArgs += "-Xopt-in=androidx.compose.animation.ExperimentalAnimationApi"
     }
 
     buildFeatures {

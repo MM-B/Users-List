@@ -72,6 +72,7 @@ dependencies {
     api(Libraries.AndroidX.Compose.activity)
     api(Libraries.Accompanist.insets)
     api(Libraries.Accompanist.system)
+    api(Libraries.Accompanist.navigationAnimation)
     api(Libraries.AndroidX.Hilt.navigationCompose)
 
     api(Libraries.ImageUtils.coil)

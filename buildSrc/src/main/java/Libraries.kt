@@ -103,7 +103,7 @@ object Libraries {
     }
 
     object Accompanist {
-        const val version = "0.20.0"
+        const val version = "0.20.3"
 
         const val insets = "com.google.accompanist:accompanist-insets:$version"
         const val flowLayout = "com.google.accompanist:accompanist-flowlayout:$version"
@@ -114,6 +114,7 @@ object Libraries {
         const val permission = "com.google.accompanist:accompanist-permissions:$version"
         const val system = "com.google.accompanist:accompanist-systemuicontroller:$version"
         const val swipeRefresh = "com.google.accompanist:accompanist-swiperefresh:$version"
+        const val navigationAnimation = "com.google.accompanist:accompanist-navigation-animation:$version"
     }
 
     object Hilt {
