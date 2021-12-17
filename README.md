@@ -1,6 +1,6 @@
 # Users List App
 
-An Sample Application With Jetpack Compose And Clean MVVM Architecture
+A Sample Application With Jetpack Compose And Clean MVVM Architecture
 
 # Features
 
